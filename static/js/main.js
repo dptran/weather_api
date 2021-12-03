@@ -12,7 +12,8 @@ form.addEventListener('click', (event) => {
 
 const weather_data = () => {
     let city = document.querySelector('#city').value
-    axios.get(`api.openweathermap.org/data/2.5/weather?q=${city}&appid=e8d5b83f2b655c2f76ab2da382b63265`).then(response => {
+    let api_key = 'e8d5b83f2b655c2f76ab2da382b63265'
+    axios.get(`api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`).then(response => {
         data = response.data.list[0]
         if (data.length > 0) {
             var temp = "";
